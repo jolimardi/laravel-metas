@@ -11,9 +11,11 @@ class MetasServiceProvider extends ServiceProvider {
 
         $this->publishes([
             __DIR__ . '/config/metas.yml' => config_path('menu.yml'),
+        ], 'config');
+
+        $this->publishes([
             __DIR__ . '/views' => app_path('Services/MetasService.php'),
-            __DIR__ . '/views' => app_path('View/Components/layout.php'),
-        ]);
+        ], 'service');
     }
 
 
