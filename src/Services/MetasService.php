@@ -1,6 +1,6 @@
 <?php
 
-namespace Jolimardi\Metas\Services;
+namespace JoliMardi\Metas\Services;
 
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Yaml\Yaml;
