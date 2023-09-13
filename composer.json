@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JoliMardi\\Metas\\MenuServiceProvider"
+                "JoliMardi\\Metas\\MetasServiceProvider"
             ]
         }
     }
