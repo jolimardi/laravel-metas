@@ -10,7 +10,7 @@ class MetasServiceProvider extends ServiceProvider {
         // $this->loadViewsFrom(__DIR__ . '/views', 'menu');
 
         $this->publishes([
-            __DIR__ . '/config/metas.yml' => config_path('menu.yml'),
+            __DIR__ . '/config/metas.yml' => config_path('metas.yml'),
         ], 'config');
     }
 
