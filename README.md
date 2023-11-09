@@ -19,7 +19,7 @@ Et modifier `app/Http/Controllers/Controller.php` pour exemple :
 
 namespace App\Http\Controllers;
 
-use App\Services\MetasService;
+use JoliMardi\Metas\Services\MetasService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
