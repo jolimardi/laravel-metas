@@ -9,7 +9,7 @@ class MetasService {
 
     public static function loadMetasYaml($custom_path = false) {
 
-        $path = '../config/metas.yml';
+        $path = base_path() . '/config/metas.yml';
         if ($custom_path) {
             $path = $custom_path;
         }
