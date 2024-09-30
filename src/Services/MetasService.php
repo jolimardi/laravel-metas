@@ -23,7 +23,7 @@ class MetasService {
         // On récupère la méta pour cette route ou la méta par défaut
         $meta = Meta::where('routename', $routename)->select('title', 'description')->toBase()->first();
         if (!$meta) {
-            $meta = Meta::where('routename', '_default_')->select('title', 'description')->toBase()->first();
+            $meta = self::getDefautMeta();
             // Si pas de défaut, on lance une erreur
             if (!$meta) {
                 throw new \ErrorException('No default meta found. Run `php artisan metas:update` to create a default meta and add routes to db');
@@ -35,6 +35,9 @@ class MetasService {
 
     public static function getTitle(array $dynamic_vars_array = [], $force_routename = false): string {
         $meta = self::getMeta($dynamic_vars_array, $force_routename);
+        if(empty($meta->title)) {
+            $meta = self::getDefautMeta();
+        }
 
         $title = $meta->title;
 
@@ -48,6 +51,9 @@ class MetasService {
 
     public static function getDescription(array $dynamic_vars_array = [], $force_routename = false): string {
         $meta = self::getMeta($dynamic_vars_array, $force_routename);
+        if(empty($meta->description)) {
+            $meta = self::getDefautMeta();
+        }
 
         $description = $meta->description;
 
@@ -75,6 +81,13 @@ class MetasService {
             }, $string);
         }
         return $string;
+    }
+
+
+
+    public static function getDefautMeta(): ?\StdClass {
+        $meta = Meta::where('routename', '_default_')->select('title', 'description')->toBase()->first();
+        return $meta;
     }
 
 
