@@ -3,7 +3,7 @@
 namespace JoliMardi\Metas\Services;
 
 use Illuminate\Support\Facades\Route;
-use JoliMardi\Metas\Models\Meta;
+use App\Models\Meta;
 
 class MetasService {
 
