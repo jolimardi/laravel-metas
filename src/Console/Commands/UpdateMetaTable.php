@@ -4,7 +4,7 @@ namespace JoliMardi\Metas\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Route;
-use JoliMardi\Metas\Models\Meta;
+use App\Models\Meta;
 use Symfony\Component\Yaml\Yaml;
 
 class UpdateMetaTable extends Command {
