@@ -39,7 +39,7 @@ class Meta extends Resource {
 
             Text::make('Routename', 'routename')
                 ->sortable()
-                ->help('Ne pas changer')
+                ->readonly()
                 ->rules('required', 'max:255'),
 
             Text::make('URI', 'uri')
