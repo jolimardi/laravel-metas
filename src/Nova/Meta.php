@@ -1,6 +1,6 @@
 <?php
 
-namespace JoliMardi\Metas\Nova;
+namespace App\Nova;
 
 use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
@@ -16,7 +16,7 @@ class Meta extends Resource {
 
     /*  ---------    Config   ----------------------------------------  */
 
-    public static $model = \JoliMardi\Metas\Models\Meta::class;
+    public static $model = \App\Models\Meta::class;
 
     public static $title = 'routename';     // C'est le field qui sera utilisé pour "résumer" la ressource
     public static $search = ['routename', 'uri', 'title'];  // fields searchables

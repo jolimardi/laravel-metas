@@ -1,12 +1,21 @@
 <?php
 
-namespace JoliMardi\Metas\Models;
+namespace App\Models;
 
-use App\Models\BaseModel;
 
-class Meta extends BaseModel {
+// Vérifie si BaseModel existe et l'importe si disponible
+if (class_exists(\App\Models\BaseModel::class)) {
+    class MetaParentModel extends BaseModel {
+    }
+} else {
+    class MetaParentModel extends \Illuminate\Database\Eloquent\Model {
+    }
+}
 
-    public $timestamps = false;
+
+class Meta extends MetaParentModel {
+
+    public $timestamps = true;
     protected $table = 'metas';
 
     protected $fillable = ['routename', 'uri', 'title', 'description'];
