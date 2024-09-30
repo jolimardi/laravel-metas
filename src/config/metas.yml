@@ -1,8 +1,0 @@
-## Metas
----
-
-## la clé doit être une route dans /routes/web.php
-
-default: 
-  title: "TODO ajouter title"
-  description: "TODO ajouter description"

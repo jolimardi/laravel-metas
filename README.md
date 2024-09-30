@@ -1,18 +1,15 @@
 # laravel-metas
 
-Composant pour configurer les metas du site via un fichier `.yml`
+Composant pour configurer les metas du site via un une table metas (et avec la Resource Nova associée)
 
 ```
 composer require jolimardi/laravel-metas
-```
-
-Puis publish le package 
-
-```
 php artisan vendor:publish --provider="JoliMardi\Metas\MetasServiceProvider"
+php artisan migrate
+php artisan metas:update
 ```
 
-Et modifier `app/Http/Controllers/Controller.php` pour exemple : 
+Et modifier `app/Http/Controllers/Controller.php` pour exemple :
 
 ```
 <?php
