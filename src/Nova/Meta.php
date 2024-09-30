@@ -35,7 +35,7 @@ class Meta extends Resource {
      */
     public function fields($request) {
         return [
-            ID::make()->sortable(),
+            ID::make()->sortable()->hideFromIndex(),
 
             Text::make('Routename', 'routename')
                 ->sortable()
@@ -55,6 +55,7 @@ class Meta extends Resource {
 
             Textarea::make('Description', 'description')
                 ->rules('nullable')
+                ->alwaysShow()
                 ->maxlength(140)
                 ->rows(2),
 
