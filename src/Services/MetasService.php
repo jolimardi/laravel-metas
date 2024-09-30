@@ -10,7 +10,7 @@ class MetasService {
 
 
 
-    public static function getMeta(array $dynamic_vars_array = [], $force_routename = false): \StdClass {
+    public static function getMeta(array $dynamic_vars_array = [], $force_routename = false): ?\StdClass {
 
         // On récupère la route actuelle
         if (!$force_routename) {
@@ -25,7 +25,7 @@ class MetasService {
         if (!$meta) {
             $meta = Meta::where('routename', '_default_')->select('title', 'description')->toBase()->first();
             // Si pas de défaut, on lance une erreur
-            if ($meta) {
+            if (!$meta) {
                 throw new \ErrorException('No default meta found. Run `php artisan metas:update` to create a default meta and add routes to db');
             }
         }
