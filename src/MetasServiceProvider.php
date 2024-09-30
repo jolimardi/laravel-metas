@@ -10,7 +10,7 @@ class MetasServiceProvider extends ServiceProvider {
 
         // migrations
         $this->publishes([
-            __DIR__ . '/database/migrations/2024_09_30_074449_create_metas_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_metas_table.php'),
+            __DIR__ . '/migrations' => database_path('migrations'),
         ], 'migrations');
 
         // Nova + models
