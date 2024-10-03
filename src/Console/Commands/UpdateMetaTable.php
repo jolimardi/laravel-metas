@@ -106,8 +106,8 @@ class UpdateMetaTable extends Command {
                 Meta::create([
                     'routename' => $routeName,
                     'uri' => null, // On laisse null pour l'URI car ce n'est pas spécifié dans le fichier YML
-                    'title' => $meta['title'],
-                    'description' => $meta['description'],
+                    'title' => isset($meta['title']) ? $meta['title'] : $metaData['_default_']['title'],
+                    'description' => isset($meta['description']) ? $meta['description'] : $metaData['_default_']['description'],
                 ]);
 
                 $this->info("Meta ajoutée à partir du fichier YML pour la route: $routeName");
