@@ -66,6 +66,16 @@ class UpdateMetaTable extends Command {
             }
         }
 
+		if(!Meta::where('routename', '_default_')->first()) {
+			Meta::create([
+				'routename' => '_default_',
+				'uri' => null,
+				'title' => 'Titre par défaut',
+				'description' => 'Description par défaut',
+			]);
+			$this->info("Meta par défaut '_default_' ajoutée.");
+		}
+
         return Command::SUCCESS;
     }
 

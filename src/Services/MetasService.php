@@ -85,8 +85,11 @@ class MetasService {
 
 
 
-    public static function getDefautMeta(): ?\StdClass {
-        $meta = Meta::where('routename', '_default_')->select('title', 'description')->toBase()->first();
+    public static function getDefautMeta(): Meta {
+        $meta = Meta::where('routename', '_default_')->select('title', 'description')->first();
+		if(!$meta){
+			$meta = new Meta();
+		}
         return $meta;
     }
 
