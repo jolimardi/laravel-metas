@@ -1,6 +1,6 @@
 # laravel-metas
 
-Composant pour configurer les metas du site via un une table metas (et avec la Resource Nova associée)
+Composant pour configurer les metas du site via une table metas (et avec la Resource Filament associée)
 
 ```
 composer require jolimardi/laravel-metas
@@ -9,7 +9,7 @@ php artisan migrate
 php artisan metas:update
 ```
 
-Et modifier `app/Http/Controllers/Controller.php` pour exemple :
+Et modifier `app/Http/Controllers/Controller.php`, par exemple :
 
 ```
 <?php
@@ -33,3 +33,5 @@ class Controller extends BaseController {
     }
 }
 ``` 
+
+La Resource Nova est toujours dans le repo mais n'est plus publiée automatiquement.

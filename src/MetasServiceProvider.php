@@ -8,16 +8,20 @@ class MetasServiceProvider extends ServiceProvider {
     public function boot() {
 
 
-        // migrations
+        // Migration
         $this->publishes([
             __DIR__ . '/migrations' => database_path('migrations'),
         ], 'migrations');
 
-        // Nova + models
+        // Model
         $this->publishes([
-            __DIR__ . '/Nova' => app_path('Nova'),
             __DIR__ . '/Models' => app_path('Models'),
-        ], 'nova');
+        ], 'model');
+
+		// Filament
+	    $this->publishes([
+		    __DIR__ . '/Filament' => app_path('Filament'),
+	    ], 'filament');
 
     }
 
