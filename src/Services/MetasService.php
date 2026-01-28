@@ -10,7 +10,7 @@ class MetasService {
 
 
 
-    public static function getMeta(array $dynamic_vars_array = [], $force_routename = false): ?\StdClass {
+    public static function getMeta(array $dynamic_vars_array = [], $force_routename = false): ?Meta {
 
         // On récupère la route actuelle
         if (!$force_routename) {
