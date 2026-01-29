@@ -21,7 +21,7 @@ class MetasService {
 
 
         // On récupère la méta pour cette route ou la méta par défaut
-        $meta = Meta::where('routename', $routename)->select('title', 'description')->toBase()->first();
+        $meta = Meta::where('routename', $routename)->select('title', 'description')->first();
         if (!$meta) {
             $meta = self::getDefautMeta();
             // Si pas de défaut, on lance une erreur
